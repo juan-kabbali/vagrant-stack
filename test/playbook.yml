@@ -1,0 +1,10 @@
+---
+- hosts: all
+  sudo: true
+  tasks: 
+    - name: actualizar apt cache
+      apt: update_cache=yes
+    - name: instalar apache
+      apt: name=apache2 state=present
+    - name: ejecutar un script de prueba
+      script: prueba.sh  
